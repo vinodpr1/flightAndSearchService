@@ -1,0 +1,20 @@
+{
+  "name": "flightandsearchservice",
+  "version": "1.0.0",
+  "description": "Backend system for airline application",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon src/index.js"
+  },
+  "keywords": [
+    "Airline",
+    "Backend"
+  ],
+  "author": "Vinod Kumar Prajaapti",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
