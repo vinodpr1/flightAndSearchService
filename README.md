@@ -1,6 +1,6 @@
-#Welcome To Flight Search Backend system
+# Welcome To Flight Search Backend system
 
-##Project Setup
+## Project Setup
 
 -Clone the repository in your local machine
 -Execute the `npm run install` in the Root Directory of the downloaded project
