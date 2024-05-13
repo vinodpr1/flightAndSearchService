@@ -23,28 +23,24 @@
 
 - Once completed the above steps successfully then go to `src` root Directory and execute `npx sequelize db:create`
 
-
-
-
-
-
-
-``` 
-"development": {
-    "username": <YOUT_USER_NAME>,
-    "password": <YOUR_PASSWORD>,
-    "database": <YOUR_DATA_BASE_NAME>,
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-```
-
 - After performing the above execute `npx sequelize db:create`
 - crosscheck the databse has created or not
+
+
+# Models for Airline System
+- Airline Management system
+  - Airplane Table (One Airplane can have different Flight) Airplane : Flight 1:N
+  - Flight Table   (One flight can be attended by any of the Plane)  
+  - Airport Table (One airport can have different flight) Airport:Flight 1:N
+  - City Table  (One City can have different Airports) City:Airport 1:N
+
 
 
 
 
 - `For running MySql Server mysql -h localhost -P 3306 -u root -p`
+- or `mysql -u root -p`
+
+
 
 
