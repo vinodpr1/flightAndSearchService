@@ -34,12 +34,14 @@
   - Airport Table (One airport can have different flight) Airport:Flight 1:N
   - City Table  (One City can have different Airports) City:Airport 1:N
 
+![alt text](image.png)
+
 
 
 
 
 - `For running MySql Server mysql -h localhost -P 3306 -u root -p`
-- or `mysql -u root -p`
+- or ` `
 
 
 
