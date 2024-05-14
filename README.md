@@ -37,11 +37,24 @@
 ![alt text](image.png)
 
 
+# Creatin of models
+ - run `npx sequelize model:generate --name <MODEL_NAME> --attributes <ATTRIBUTE_NAME:TYPE>`
+ - Exa `npx sequelize model:generate --name City --attributes name:String`
+ - result `New model was created at <ROOT>` 
+          `New model was created at <ROOT>`
+
+ - Till now it's not synched with our database 
+ - To make in synch with database run `flight_search_db_dev`
+          
+
+
+
+
 
 
 
 - `For running MySql Server mysql -h localhost -P 3306 -u root -p`
-- or ` `
+- or `mysql -u root -p`
 
 
 
