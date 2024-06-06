@@ -1,5 +1,20 @@
 # Welcome To Flight Search Backend system
 
+# Project Structure
+- src folder
+  - index.js (Server)
+  - /models
+  - /config
+  - /controller
+  - /utils
+  - /router
+  - /middlewares
+  - /services
+
+- Tests [future]
+
+
+
 ## Project Setup
 
 - Clone the repository in your local machine
@@ -37,15 +52,15 @@
 ![alt text](image.png)
 
 
-# Creatin of models
+# Creation of models
  - run `npx sequelize model:generate --name <MODEL_NAME> --attributes <ATTRIBUTE_NAME:TYPE>`
  - Exa `npx sequelize model:generate --name City --attributes name:String`
  - result `New model was created at <ROOT>` 
           `New model was created at <ROOT>`
 
  - Till now it's not synched with our database 
- - To make in synch with database run `flight_search_db_dev`
-          
+ - To make in synch with database run `npx sequelize db:migrate`
+ - create city repository in `src/repository/city-repository.js` to interact with models and write logic to CRUD and all (repository layer is responsible for DB interaction)
 
 
 
@@ -55,6 +70,7 @@
 
 - `For running MySql Server mysql -h localhost -P 3306 -u root -p`
 - or `mysql -u root -p`
+- All the interaction from model will have from repository level.
 
 
 
