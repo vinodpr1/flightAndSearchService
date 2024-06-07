@@ -1,5 +1,10 @@
 const cityRepository = require("./city-repository");
 
 module.exports={
-    cityRepository
+    cityRepository,
 }
+
+// or
+// module.exports={
+//     cityRepository:require("./city-repository");
+// }
