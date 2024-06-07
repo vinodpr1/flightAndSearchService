@@ -1,12 +1,10 @@
 const express=require("express");
 
-const {City}=require("./models/index.js");
-const cityRepository=require("./repository/citi-repository.js")
-
-
 const {PORT}=require("./config/serverConfig.js");
 
 const bodyParser = require("body-parser");
+
+const {cityRepository}=require("./repository/index.js")
 
 const setUpAndStartServer=()=>{
 
@@ -16,7 +14,7 @@ const setUpAndStartServer=()=>{
     app.use(bodyParser.urlencoded({extended:true}));
 
     app.listen(PORT,async()=>{
-         console.log("Server has Started on port no",PORT)
+         console.log("Server has Started on port no",PORT);
     })
 }
 

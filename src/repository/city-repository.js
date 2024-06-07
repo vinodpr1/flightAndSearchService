@@ -33,6 +33,7 @@ class cityRepository {
             return city
         } catch (error) {
             console.log("Error Has occured", error);
+            throw {error};
         }
     }
 

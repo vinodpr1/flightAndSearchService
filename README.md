@@ -62,6 +62,9 @@
  - To make in synch with database run `npx sequelize db:migrate`
  - create city repository in `src/repository/city-repository.js` to interact with models and write logic to CRUD and all (repository layer is responsible for DB interaction)
 
+- All the interaction from model will be completed from repository level.
+
+
 
 
 
@@ -70,7 +73,6 @@
 
 - `For running MySql Server mysql -h localhost -P 3306 -u root -p`
 - or `mysql -u root -p`
-- All the interaction from model will have from repository level.
 
 
 
