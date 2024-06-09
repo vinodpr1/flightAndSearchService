@@ -1,6 +1,6 @@
 const { City } = require("../models/index");
 
-class cityRepository {
+class CityRepository {
 
     async createCity({name}) {
         try {
@@ -51,6 +51,7 @@ class cityRepository {
         }
     }
 
+
 }
 
-module.exports = cityRepository;
+module.exports = CityRepository;
