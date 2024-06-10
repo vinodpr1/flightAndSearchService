@@ -80,11 +80,32 @@ const destroy=async(req,res)=>{
 }
 
 
+const getall=async(req,res)=>{
+    try {
+         const city=await cityService.getAllCity();
+         return res.status(200).json({
+             status:city,
+             success:true,
+             message:"All City Has fetched successfully !",
+             error:{}, 
+         });
+    } catch (error) {
+        return res.status(500).json({
+            data:null,
+            success:false,
+            message:"any City Has  not fetched successfully !",
+            error:error, 
+        })
+    }
+}
+
+
 module.exports={
     create,
     read,
     destroy,
     update,
+    getall
 }
 
 
