@@ -63,6 +63,9 @@
 ### city -> id, name, createdAt, updatedAt
 ### airport -> id, name, address, cityId, createdAt, updatedAt
 
+# Relationship between city and airport -> 
+### city has many airport and airport can belongs to only one city (one to many)
+
  - Till now it's not synched with our database 
  - To make in synch with database run `npx sequelize db:migrate`
  - create city repository in `src/repository/city-repository.js` to interact with models and write logic to CRUD and all (repository layer is responsible for DB interaction)
