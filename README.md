@@ -58,11 +58,22 @@
  - result `New model was created at <ROOT>` 
           `New model was created at <ROOT>`
 
+# City, Airport Table
+
+### city -> id, name, createdAt, updatedAt
+### airport -> id, name, address, cityId, createdAt, updatedAt
+
  - Till now it's not synched with our database 
  - To make in synch with database run `npx sequelize db:migrate`
  - create city repository in `src/repository/city-repository.js` to interact with models and write logic to CRUD and all (repository layer is responsible for DB interaction)
 
 - All the interaction from model will be completed from repository level.
+
+- Repository layer is communicationg to service layer to perform extra logic calculation. 
+
+- Service Layer is communicating to controller and the business logic are written inside controller layer
+
+- Controller layer will hit the api inside /v1/index.js with corresponding routes.
 
 
 
