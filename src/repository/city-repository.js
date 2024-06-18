@@ -1,4 +1,6 @@
 const { City } = require("../models/index");
+const { Op } = require("sequelize");
+
 
 class CityRepository {
 
@@ -52,17 +54,27 @@ class CityRepository {
     }
 
 
-    async getAllCity() {
+    async getFilter({name}) {
         try {
-            const cities=await City.findAll();
-            return cities;
+                if(!name){
+                    const cities=await City.findAll();
+                    return cities;
+                }
+                const cities=await City.findAll({
+                    where:{
+                        name:{
+                            [Op.startsWith] : name
+                        }
+                    }
+                });
+                return cities;
         } catch (error) {
-            console.log("Error Has occured");
+            console.log("Error Has occured on repo level");
             throw {error};
         }
     }
 
-
+    
 }
 
 module.exports = CityRepository;

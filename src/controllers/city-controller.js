@@ -8,14 +8,14 @@ const create=async(req,res)=>{
          return res.status(201).json({
              data:city,
              success:true,
-             message:"Data has added successfully",
+             message:'Data has added successfully',
              error:{}, 
          })
     } catch (error) {
         return res.status(500).json({
             data:null,
             success:false,
-            message:"SOmething is went wrong",
+            message:'Something is went wrong',
             error:error, 
         })
     }
@@ -27,14 +27,14 @@ const read=async(req,res)=>{
          return res.status(200).json({
              data:city,
              success:true,
-             message:"City name has Fetched successfully !",
+             message:'City name has Fetched successfully !',
              error:{}, 
          });
     } catch (error) {
         return res.status(201).json({
             data:null,
             success:false,
-            message:"Something is went wrong",
+            message:'Something is went wrong',
             error:error, 
         })
     }
@@ -44,16 +44,16 @@ const update=async(req,res)=>{
     try {
          const city=await cityService.updateCity(req.params.id,req.body);
          return res.status(200).json({
-             status:city,
+             data:city,
              success:true,
-             message:"City Has Updated successfully !",
+             message:'City Has Updated successfully !',
              error:{}, 
          });
     } catch (error) {
         return res.status(500).json({
             data:null,
             success:false,
-            message:"Something is went wrong",
+            message:'Something is went wrong',
             error:error, 
         })
     }
@@ -64,40 +64,43 @@ const destroy=async(req,res)=>{
     try {
          const city=await cityService.deleteCity(req.params.id);
          return res.status(200).json({
-             status:city,
+             data:city,
              success:true,
-             message:"City Has deleted successfully !",
+             message:'City Has deleted successfully !',
              error:{}, 
          });
     } catch (error) {
         return res.status(500).json({
             data:null,
             success:false,
-            message:"Something is went wrong",
+            message:'Something is went wrong',
             error:error, 
         })
     }
 }
 
 
-const getall=async(req,res)=>{
-    try {
-         const city=await cityService.getAllCity();
+const getfilter=async(req,res)=>{
+    try { 
+         const city=await cityService.getFilter(req.query);
          return res.status(200).json({
-             status:city,
+             data:city,
              success:true,
-             message:"All City Has fetched successfully !",
+             message:'Filter City Has fetched successfully !',
              error:{}, 
          });
     } catch (error) {
         return res.status(500).json({
             data:null,
             success:false,
-            message:"any City Has  not fetched successfully !",
+            message:'Filter City can not fetched successfully !',
             error:error, 
         })
     }
 }
+
+
+
 
 
 module.exports={
@@ -105,7 +108,7 @@ module.exports={
     read,
     destroy,
     update,
-    getall
+    getfilter
 }
 
 

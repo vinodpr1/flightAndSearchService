@@ -45,20 +45,16 @@ class CityService{
             throw {error};
         }
     }
-
-    async getAllCity(){
+  
+    async getFilter(filter){
         try {
-            const response=await this.cityRepository.getAllCity();
+            const response=await this.cityRepository.getFilter({name:filter.name});
             return response;
         } catch (error) {
-            console.log(" error has occured from service layer during fetching all city");
+            console.log('error has occured from service layer during fetching all city');
             throw {error};
         }
     }
-
-    
-
-
 }
 
 module.exports=CityService;
