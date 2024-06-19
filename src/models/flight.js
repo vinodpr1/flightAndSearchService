@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'Fligh',
+    modelName: 'Flight',
   });
   return Flight;
 };

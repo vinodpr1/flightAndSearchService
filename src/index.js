@@ -5,7 +5,6 @@ const {PORT}=require("./config/serverConfig.js");
 const bodyParser = require("body-parser");
 const ApiRouter = require("./routes/index.js");
 
-const {Airplane} = require('./models/index.js')
 
 const setUpAndStartServer = ()=>{
 
@@ -15,10 +14,11 @@ const setUpAndStartServer = ()=>{
     app.use(bodyParser.urlencoded({extended : true}));
 
     app.use('/api' , ApiRouter);
-    
+  
     app.listen(PORT , async()=>{
-
+    
          console.log("Server has Started on port no" , PORT);
+        
          // expose an api that can pass multiple city in one go like array something no loop
         
 
