@@ -16,8 +16,8 @@ class AirportRepository{
     async deleteAirport(airportId){
         try {
              const airport=await Airport.destroy({
-                where:{
-                    id:airportId
+                where : {
+                    id : airportId
                 }
              });
              return airport;
@@ -33,7 +33,7 @@ class AirportRepository{
         try {
              const airport=await Airport.update(data,
              {
-                where:{
+                where : {
                     id : airportId
                 }
              });
@@ -47,7 +47,7 @@ class AirportRepository{
     async getAirport(cityId){
         try {
              const airport=await Airport.findAll({
-                where:{
+                where : {
                     cityId : cityId
                 }
              });

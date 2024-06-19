@@ -28,8 +28,8 @@ class CityRepository {
     async updateCity(cityId,newName) {
         try {
             const city=await City.update(newName,{
-                where:{
-                    id:cityId, 
+                where : {
+                    id : cityId, 
                 }
             });
             return city
@@ -42,8 +42,8 @@ class CityRepository {
     async deleteCity(cityId) {
         try {
             await City.destroy({
-                where:{
-                    id:cityId
+                where : {
+                    id : cityId
                 }
             });
             return true;
@@ -61,8 +61,8 @@ class CityRepository {
                     return cities;
                 }
                 const cities=await City.findAll({
-                    where:{
-                        name:{
+                    where : {
+                        name : {
                             [Op.startsWith] : name
                         }
                     }
@@ -74,7 +74,7 @@ class CityRepository {
         }
     }
 
-    
+  
 }
 
 module.exports = CityRepository;

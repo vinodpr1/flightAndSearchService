@@ -10,6 +10,7 @@ router.delete('/city/:id' , CityController.destroy);
 router.patch('/city/:id' , CityController.update);
 router.get('/city' , CityController.getfilter);
 
+
 router.post('/airport' , AirportController.create)
 router.delete('/airport/:id' , AirportController.destroy)
 router.patch('/airport/:id' , AirportController.update)

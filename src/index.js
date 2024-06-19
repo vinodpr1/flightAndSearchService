@@ -3,26 +3,25 @@ const express=require("express");
 const {PORT}=require("./config/serverConfig.js");
 
 const bodyParser = require("body-parser");
-const ApiRouter=require("./routes/index.js");
+const ApiRouter = require("./routes/index.js");
 
-const {Airport, City}=require('./models/index.js')
+const {Airport, City} = require('./models/index.js')
 
-const setUpAndStartServer=()=>{
+const setUpAndStartServer = ()=>{
 
-    const app=express();
+    const app = express();
 
     app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({extended:true}));
+    app.use(bodyParser.urlencoded({extended : true}));
 
-    app.use('/api',ApiRouter);
+    app.use('/api' , ApiRouter);
     
-    app.listen(PORT,async()=>{
-         console.log("Server has Started on port no",PORT);
+    app.listen(PORT , async()=>{
+         console.log("Server has Started on port no" , PORT);
        
          // expose an api that can pass multiple city in one go like array something no loop
         
-         // crud for airport
-         
+
         //add api in city resource for getting all the airport from a city
 
          //play with this
