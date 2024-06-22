@@ -19,21 +19,21 @@ class FlightRepository {
       //not working need to be fixed
       // nee to play with this functionality
 
-      if (data.minPrice && data.maxPrice) {
-         Object.assign(filter, {
-                  [Op.and]: [
-                        { price: {[Op.gte] : data.maxPrice} },
-                        { price: {[Op.lte] : data.minPrice} }
-                     ]
-               })
+      // if (data.minPrice && data.maxPrice) {
+      //    Object.assign(filter, {
+      //      [Op.and]: [
+      //                   { price: 4000 },
+      //                   { price: 5000 }
+      //                ]
+      //          })
+      // }
+
+      if (data.minPrice) {
+         Object.assign(filter, { price: { [Op.gte]: data.minPrice } })
       }
 
       if (data.maxPrice) {
-         Object.assign(filter, { price: { [Op.gte]: data.maxPrice } })
-      }
-
-      if (data.minPrice) {
-         Object.assign(filter, { price: { [Op.lte]: data.minPrice } })
+         Object.assign(filter, { price: { [Op.lte]: data.maxPrice } })
       }
 
       return filter;
