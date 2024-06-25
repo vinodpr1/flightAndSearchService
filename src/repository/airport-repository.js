@@ -1,15 +1,10 @@
 const {Airport} = require('../models/index');
+const CrudRepository =require('./crud-repository')
 
-class AirportRepository{
+class AirportRepository extends CrudRepository{
 
-    async createAirport(data){
-        try {
-             const airport=await Airport.create(data);
-             return airport;
-        } catch (error) {
-            console.log("Error Has occured in repo while creating Airport", error);
-            throw {error};
-        } 
+    constructor(){
+        super(Airport);
     }
 
 

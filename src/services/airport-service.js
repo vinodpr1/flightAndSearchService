@@ -1,20 +1,28 @@
 const {AirportRepository} = require('../repository/index');
+const CrudService=require('../services/crud-service');
 
-class AirportService{
+
+class AirportService extends CrudService{
     
     constructor(){
-        this.airportRepository = new AirportRepository();
+        const repository = new AirportRepository();
+        super(repository);
+        this.airportRepository==new AirportRepository();
     }
 
-    async createAirport(data){
-        try {
-             const airport = await this.airportRepository.createAirport(data);
-             return airport;
-        } catch (error) {
-            console.log('error has occured from service layer during creating Airport');
-            throw {error};
-        }
-    } 
+
+    
+
+
+    // async createAirport(data){
+    //     try {
+    //          const airport = await this.airportRepository.createAirport(data);
+    //          return airport;
+    //     } catch (error) {
+    //         console.log('error has occured from service layer during creating Airport');
+    //         throw {error};
+    //     }
+    // } 
 
     async deleteAirport(airportId){
         try {

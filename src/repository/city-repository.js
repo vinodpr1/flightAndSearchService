@@ -1,13 +1,14 @@
 const { City } = require("../models/index");
 const { Op } = require("sequelize");
-const CrudRepository = require('./crud-repository');
+const CrudRepository =require('./crud-repository')
 
 class CityRepository extends CrudRepository {
 
     constructor(){
         super(City);
     }
-
+     
+    // if the same method is present in child's class body then it will be considered
 
     async getFilter({name}) {
         try {
