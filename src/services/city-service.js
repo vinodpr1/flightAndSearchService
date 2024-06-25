@@ -1,50 +1,14 @@
-const {CityRepository}=require("../repository/index")
+const {CityRepository}=require("../repository/index");
+const CrudService=require('../services/crud-service');
 
-class CityService{
+class CityService extends CrudService{
     
     constructor(){
-        this.cityRepository = new CityRepository();
+        const repository=new CityRepository();
+        super(repository);
+        this.cityRepository = new CityRepository();  
     } 
 
-    async createCity(data){
-        try {
-             const response = await this.cityRepository.createCity(data);
-             return response;
-        } catch (error) {
-            console.log("Some error has occured from service layer");
-            throw {error};
-        }
-    }
-
-    async getCity(cityId){
-        try {
-            const city = await this.cityRepository.getCity(cityId);
-            return city;
-        } catch (error) {
-            console.log("Some error has occured from service layer");
-            throw {error};
-        }
-    }
-
-    async updateCity(cityId,data){
-        try {
-            const city = await this.cityRepository.updateCity(cityId,data);
-            return city;
-        } catch (error) {
-            console.log("Some error has occured from service layer");
-            throw {error};
-        }
-    }
-
-    async deleteCity(cityId){
-        try {
-            const response = await this.cityRepository.deleteCity(cityId);
-            return response;
-        } catch (error) {
-            console.log("Some error has occured from service layer");
-            throw {error};
-        }
-    }
   
     async getFilter(filter){
         try {

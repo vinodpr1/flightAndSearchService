@@ -7,7 +7,7 @@ const cityService=new CityService();
 const create=async(req , res)=>{
     try {
          
-         const city=await cityService.createCity(req.body);
+         const city=await cityService.createEntry(req.body);
          return res.status(SuccessCode.CREATED).json({
              data : city,
              success : true,
@@ -26,11 +26,11 @@ const create=async(req , res)=>{
 
 const read=async(req , res)=>{
     try {
-         const city=await cityService.getCity(req.params.id);
+         const city=await cityService.getData(req.params.id);
          return res.status(SuccessCode.OK).json({
              data : city,
              success : true,
-             message : 'City name has Fetched successfully !',
+             message : 'data name has Fetched successfully !',
              error : {}, 
          });
     } catch (error) {
@@ -45,7 +45,7 @@ const read=async(req , res)=>{
 
 const update=async(req , res)=>{
     try {
-         const city=await cityService.updateCity(req.params.id,req.body);
+         const city=await cityService.updateData(req.params.id,req.body);
          return res.status(SuccessCode.ACCEPTED).json({
              data : city,
              success : true,
@@ -65,11 +65,11 @@ const update=async(req , res)=>{
 
 const destroy=async(req , res)=>{
     try {
-         const city=await cityService.deleteCity(req.params.id);
+         const city=await cityService.deleteData(req.params.id);
          return res.status(SuccessCode.ACCEPTED).json({
              data : city,
              success : true,
-             message : 'City Has deleted successfully !',
+             message : 'Data Has deleted successfully !',
              error : {}, 
          });
     } catch (error) {
