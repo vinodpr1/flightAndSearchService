@@ -28,7 +28,7 @@
 
 ```
 "development": {
-    "username": <YOUT_USER_NAME>,
+    "username": <YOUR_USER_NAME>,
     "password": <YOUR_PASSWORD>,
     "database": <YOUR_DATA_BASE_NAME>,
     "host": "127.0.0.1",
@@ -90,4 +90,29 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# SQL Database
+
+## Postgress and Prisma
+
+- Connection to postgres
+```postgress://[username]/[password]@[host]/[database_name]```
+
+# How can you get Postgres DB
+
+- go to elephentSql (Provide 20 MB of free Data Storage) but unfortunetly they did't operates now (End of Life announcement Elephent SQL)
+- 
 

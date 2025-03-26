@@ -1,10 +1,6 @@
 const express=require("express");
-
-const {PORT}=require("./config/serverConfig.js");
-
 const bodyParser = require("body-parser");
 const ApiRouter = require("./routes/index.js");
-
 
 const dotenv=require("dotenv");
 dotenv.config();
@@ -17,24 +13,17 @@ const setUpAndStartServer = ()=>{
     app.use(bodyParser.urlencoded({extended : true}));
 
     app.use('/api' , ApiRouter);
+
+    app.get("/",(req, res)=>{
+      res.status(200).json({Health:"Health os okk of the Server"});
+    })
+
+    app.get("/shoes",(req, res)=>{
+      res.status(200).json({Health:"Our shoes businessed is doing great"});
+    })
     
-    app.listen(PORT , async()=>{
-         console.log("Server has Started on port no" , PORT);
-
-         // expose an api that can pass multiple city in one go like array something no loop
-        
-
-        //add api in city resource for getting all the airport from a city
-
-         //play with this
-        //  const city=await City.findOne({
-        //     where:{
-        //         id:21
-        //     }
-        //  })
-        //  const airport=await city.getAirports()
-        //  console.log(city, airport);
-
+    app.listen(3000 , async()=>{
+         console.log("Server has Started on port no=> 3000");
     })
 }
 
